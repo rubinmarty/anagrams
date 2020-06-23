@@ -1,0 +1,20 @@
+<head>
+    <title>Anagrams</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="elm-output.js"></script>
+</head>
+<body>
+    <div id="elm-hook"></div>
+    <script>
+        fetch('./ScrabbleWords.txt')
+            .then((response) => {
+                response.text().then((text) => {
+                    Elm.Main.init({
+                        node: document.getElementById('elm-hook'),
+                        flags: text
+                    });
+                });
+            });
+    </script>
+</body>
